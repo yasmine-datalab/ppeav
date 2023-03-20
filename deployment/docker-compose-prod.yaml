@@ -13,7 +13,6 @@ services:
       - back
   # API
   api:
-    #image: ${BACKEND_IMAGE}
     build: ../backend/python
     volumes:
       - static_volume:/opt/app/api/staticfiles
