@@ -1,1 +1,2 @@
 ./.db.dev.env
+./backend/python/api/db.sqlite3
