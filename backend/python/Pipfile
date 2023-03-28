@@ -8,6 +8,8 @@ django = "*"
 django-rest = "*"
 django-rest-framework = "*"
 djangorestframework-simplejwt = "*"
+pylint = "*"
+autopep8 = "*"
 
 [dev-packages]
 
