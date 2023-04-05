@@ -10,6 +10,8 @@ django-rest-framework = "*"
 djangorestframework-simplejwt = "*"
 pylint = "*"
 autopep8 = "*"
+excel2json = "*"
+pandas = "*"
 
 [dev-packages]
 

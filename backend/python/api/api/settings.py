@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework_simplejwt',
     'rest_framework',
-    'account',
+    'accounts',
+    'structure',
+    'enfant',
+    'rencontre',
+    'fileupload'
     
 ]
 
@@ -58,8 +62,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-    
+        
+    )    
 }
 
 ROOT_URLCONF = 'api.urls'
