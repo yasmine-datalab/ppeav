@@ -1,3 +1,4 @@
+"""  view """
 from rest_framework import viewsets
 import rest_framework.permissions
 from .models import Structure
@@ -20,5 +21,3 @@ class StructureViewSet(viewsets.ModelViewSet):
         else:
             permission_classes = [rest_framework.permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
-
-   
