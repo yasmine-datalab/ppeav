@@ -19,14 +19,14 @@ class RegisterSerializer(serializers.ModelSerializer):
             'password': {'write_only': True},
         }
 
-    # def create(self, validated_data):
-    #     user = User.objects.create_user(validated_data['username'],
-    #                                     password=validated_data['password'],
-    #                                     first_name=validated_data['first_name'],
-    #                                     last_name=validated_data['last_name'],
-    #                                     is_superuser=validated_data['is_superuser'],
-    #                                     is_staff=validated_data["is_staff"])
-    #     return user
+    def create(self, validated_data):
+        user = User.objects.create_user(validated_data['username'],
+                                        password=validated_data['password'],
+                                        first_name=validated_data['first_name'],
+                                        last_name=validated_data['last_name'],
+                                        is_superuser=validated_data['is_superuser'],
+                                        is_staff=validated_data["is_staff"])
+        return user
 
 # User serializer
 
@@ -43,6 +43,9 @@ class RegisterSerializer(serializers.ModelSerializer):
 #         fields = '__all__'
 
 class ChangePasswordSerializer(serializers.Serializer):
+    """
+        change pwd serializer
+    """
     model = User
 
     """

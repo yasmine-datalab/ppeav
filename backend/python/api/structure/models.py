@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class structure(models.Model):
+class Structure(models.Model):
     """
         structure model
     """
@@ -18,4 +18,6 @@ class structure(models.Model):
     GPS =  models.CharField(max_length=100, blank=True)
 
     class Meta:
+        """
+        meta"""
         ordering = ['structure']

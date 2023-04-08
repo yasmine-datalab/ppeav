@@ -1,17 +1,16 @@
 from rest_framework import viewsets
 import rest_framework.permissions
-from rest_framework.response import Response
-from .models import structure
-from .serializer import structureSerializer
+from .models import Structure
+from .serializer import StructureSerializer
 
-class structureViewSet(viewsets.ModelViewSet):
+class StructureViewSet(viewsets.ModelViewSet):
     """
-    
+     view set
     """
-    serializer_class = structureSerializer
-    queryset = structure.objects.all()
-    model= structure
-    
+    serializer_class = StructureSerializer
+    queryset = Structure.objects.all()
+    model= Structure
+
     def get_permissions(self):
         """
         Instantiates and returns the list of permissions that this view requires.
@@ -21,5 +20,5 @@ class structureViewSet(viewsets.ModelViewSet):
         else:
             permission_classes = [rest_framework.permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
-    
+
    

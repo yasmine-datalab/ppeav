@@ -1,23 +1,23 @@
 from rest_framework import serializers
-from .models import rencontre
+from .models import Rencontre
 
 
 
 
-class rencontreBulkCreateUpdateSerializer(serializers.ListSerializer):  
+class RencontreBulkCreateUpdateSerializer(serializers.ListSerializer):
+    """
+    serializer for bulk create
+    """
+    def create(self, validated_data):
         """
-         serializer for bulk create
+        create
         """
-        def create(self, validated_data):  
-            """
-            create
-            """
-            data = [rencontre(**item) for item in validated_data]  
-            return rencontre.objects.bulk_create(data)  
-        
+        data = [Rencontre(**item) for item in validated_data]
+        return Rencontre.objects.bulk_create(data)
 
 
-class rencontreSerializer(serializers.ModelSerializer):
+
+class RencontreSerializer(serializers.ModelSerializer):
     """
         class enfant serializer
     """
@@ -25,8 +25,7 @@ class rencontreSerializer(serializers.ModelSerializer):
         """
             Meta class
         """
-        model = rencontre
+        model = Rencontre
         fields = '__all__'
-        list_serializer_class = rencontreBulkCreateUpdateSerializer
-
+        list_serializer_class = RencontreBulkCreateUpdateSerializer
     

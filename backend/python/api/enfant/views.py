@@ -1,17 +1,16 @@
-from .serializer import enfantSerializer
 from rest_framework import viewsets
 import rest_framework.permissions
-from rest_framework.response import Response
-from .models import enfant
+from .models import Enfant
+from .serializer import EnfantSerializer
 
-class enfantViewSet(viewsets.ModelViewSet):
+class EnfantViewSet(viewsets.ModelViewSet):
     """
     
     """
-    serializer_class = enfantSerializer
-    queryset = enfant.objects.all()
-    model= enfant
-    
+    serializer_class = EnfantSerializer
+    queryset = Enfant.objects.all()
+    model= Enfant
+
     def get_permissions(self):
         """
         Instantiates and returns the list of permissions that this view requires.
@@ -21,5 +20,3 @@ class enfantViewSet(viewsets.ModelViewSet):
         else:
             permission_classes = [rest_framework.permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
-    
-   

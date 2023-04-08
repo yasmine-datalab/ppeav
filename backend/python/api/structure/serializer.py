@@ -1,24 +1,22 @@
 from rest_framework import serializers
-from .models import structure
+from .models import Structure
 
 
 
 
 
-class structureBulkCreateUpdateSerializer(serializers.ListSerializer):  
+class StructureBulkCreateUpdateSerializer(serializers.ListSerializer):
+    """
+    serializer for bulk create
+    """
+    def create(self, validated_data):
         """
-         serializer for bulk create
+        create
         """
-        def create(self, validated_data):  
-            """
-            create
-            """
-            data = [structure(**item) for item in validated_data]  
-            return structure.objects.bulk_create(data) 
-        
+        data = [Structure(**item) for item in validated_data]
+        return Structure.objects.bulk_create(data)
 
-
-class structureSerializer(serializers.ModelSerializer):
+class StructureSerializer(serializers.ModelSerializer):
     """
         class enfant serializer
     """
@@ -26,9 +24,7 @@ class structureSerializer(serializers.ModelSerializer):
         """
             Meta class
         """
-        model = structure
+        model = Structure
         fields = '__all__'
-        list_serializer_class = structureBulkCreateUpdateSerializer
-    
-
+        list_serializer_class = StructureBulkCreateUpdateSerializer
     

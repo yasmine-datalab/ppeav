@@ -1,17 +1,16 @@
 from rest_framework import viewsets
 import rest_framework.permissions
-from rest_framework.response import Response
-from .models import rencontre
-from .serializer import rencontreSerializer
+from .models import Rencontre
+from .serializer import RencontreSerializer
 
-class rencontreViewSet(viewsets.ModelViewSet):
+class RencontreViewSet(viewsets.ModelViewSet):
     """
-    
+        rencontre
     """
-    serializer_class = rencontreSerializer
-    queryset = rencontre.objects.all()
-    model= rencontre
-    
+    serializer_class = RencontreSerializer
+    queryset = Rencontre.objects.all()
+    model= Rencontre
+
     def get_permissions(self):
         """
         Instantiates and returns the list of permissions that this view requires.
@@ -21,5 +20,3 @@ class rencontreViewSet(viewsets.ModelViewSet):
         else:
             permission_classes = [rest_framework.permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
-    
-   

@@ -12,6 +12,7 @@ pylint = "*"
 autopep8 = "*"
 excel2json = "*"
 pandas = "*"
+pylint-django = "*"
 
 [dev-packages]
 

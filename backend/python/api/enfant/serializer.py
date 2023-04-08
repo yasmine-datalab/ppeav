@@ -1,19 +1,19 @@
+"""  Serializer """
 from rest_framework import serializers
-from .models import enfant
+from .models import Enfant
 
-class enfantBulkCreateUpdateSerializer(serializers.ListSerializer):  
+class EnfantBulkCreateUpdateSerializer(serializers.ListSerializer):
     """
     serializer for bulk create
     """
-    def create(self, validated_data):  
+    def create(self, validated_data):
         """
         create
         """
-        data = [enfant(**item) for item in validated_data]  
-        return enfant.objects.bulk_create(data)  
-      
+        data = [Enfant(**item) for item in validated_data]
+        return Enfant.objects.bulk_create(data)
 
-class enfantSerializer(serializers.ModelSerializer):
+class EnfantSerializer(serializers.ModelSerializer):
     """
         class enfant serializer
     """
@@ -21,8 +21,8 @@ class enfantSerializer(serializers.ModelSerializer):
         """
             Meta class
         """
-        model = enfant
+        model = Enfant
         fields = '__all__'
-        list_serializer_class = enfantBulkCreateUpdateSerializer
+        list_serializer_class = EnfantBulkCreateUpdateSerializer
 
     
