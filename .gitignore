@@ -6,3 +6,8 @@
 ./structure.csv
 ./.~lock.Sans nom 1.csv#
 ./.~lock.structure.csv#
+./backend/python/api/accounts/migration
+./backend/python/api/enfant/migration
+./backend/python/api/rencontre/migration
+./backend/python/api/structure/migration
+./backend/python/api/fileupload/migration
