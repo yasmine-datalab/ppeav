@@ -1,2 +1,8 @@
 ./.db.dev.env
 ./backend/python/api/db.sqlite3
+./backend/python/api/<django.db.models.fields.CharField>_files
+./rencontre.csv
+./Sans nom 1.csv
+./structure.csv
+./.~lock.Sans nom 1.csv#
+./.~lock.structure.csv#
